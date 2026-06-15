@@ -64,7 +64,7 @@ http://127.0.0.1:8000/nama-model
 
 > Dokumentasi perjalanan Full-Stack Faris - 15 Juni 2026. Dari error Vite 6 hingga siap integrasi API.
 
-# 📖 Bedah Syntax Laravel
+# 📖 Bedah Syntax Laravel Difile Web.php
 
 ## 1. Di dalam `NamaController.php` (Otak Aplikasi)
 
