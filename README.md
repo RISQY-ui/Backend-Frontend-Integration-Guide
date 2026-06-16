@@ -286,6 +286,7 @@ Integrasi API ✅ SELESAI! Data muncul di layar
 Console Firefox ✅ Bersih, tanpa error merah
 ```
 ---
+```
 
 💡 PELAJARAN PENTING
 
@@ -295,7 +296,7 @@ CORS Laravel secara default hanya mengizinkan CORS untuk route api/*
 Solusi CORS Ubah 'paths' => ['api/*', 'sanctum/csrf-cookie'] menjadi 'paths' => ['*']
 Tanda Bintang (*) Artinya mengizinkan semua rute, cocok untuk development lokal
 Axios Alat penarik data dari backend ke frontend
-
+```
 ---
 
 Kitab Lengkap Faris: Backend → Frontend - Disusun oleh faris untuk belajar dan memahami. Dari Laravel ke React.js, semua perintah, syntax, error, dan solusi ada di sini. 
