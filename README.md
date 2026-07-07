@@ -4,43 +4,47 @@ From Laravel to React.js - June 15-16, 2026
 
 ---
 
-📊 SUMMARY: FROM BACKEND TO FRONTEND
+# 📊 SUMMARY: FROM BACKEND TO FRONTEND
 
 1. Problems We Successfully Solved
-
+```
 Aspect Description
 Root Cause When trying to create a React project using @latest, the error SyntaxError: ... node:util ... styleText appeared. This happened because the latest Vite installer (Vite 6) does not support Node.js version 18.19.1 installed on the laptop
 Genius Solution Downgraded the installer to Vite version 5 (npm create vite@5). Result: 100% compatible, safe, and smooth without changing Linux system configuration
-
+```
+---
 2. Successfully Executed Steps (Progress Checklist)
+```
 
 No Step Status Description
 1 Created React Folder ✅ Successfully created frontend-faris folder inside the Laravel practice directory
 2 Installed Basic Dependencies ✅ npm install successfully downloaded all React.js basic packages
 3 Tested Server ✅ npm run dev successfully displayed Vite + React template in Firefox browser
 4 Installed Axios ✅ Shut down server (Ctrl + C) and installed Axios (npm install axios) as data fetcher from Laravel
-
+```
+---
 3. Position in Project Roadmap
-
+```
 Stage Status Description
 Stage 1 ✅ Complete Initial setup
 Stage 2 ✅ Complete Frontend preparation
 Stage 3 ✅ Complete Axios installation
 Stage 4 ✅ Complete API Integration + CORS
-
+```
 ---
 
-🚨 CORS ERROR & SOLUTION (June 16, 2026)
+# 🚨 CORS ERROR & SOLUTION (June 16, 2026)
 
 Issue Found
-
+```
 Aspect Description
 Time 18:21 WIB
 Error Message Cross-Origin Request Blocked: ... (Reason: CORS header 'Access-Control-Allow-Origin' missing). Status code: 200.
 Root Cause Laravel by default only opens CORS for routes/api.php files. Since the /model-name route was placed in routes/web.php, Laravel detected Axios calls from React as a foreign threat and locked the gate
-
-Solution
-
+```
+---
+# Solution
+```
 Step Command Description
 1 Open config/cors.php In VS Code Laravel
 2 Change 'paths' => ['api/*', 'sanctum/csrf-cookie'] To 'paths' => ['*']
@@ -51,25 +55,26 @@ Final Result
 Status Description
 ✅ 100% Success! Firefox console completely clear of red errors
 ✅ Connection Established React display successfully showed data from Laravel
-
+```
 ---
 
-📖 SYNTAX BREAKDOWN (LARAVEL)
+# 📖 SYNTAX BREAKDOWN (LARAVEL)
 
 1. Inside NamaController.php (Application Brain)
-
+```
 Code Meaning
 namespace App\Http\Controllers; The address of this file within the project folder. So Laravel doesn't get lost when searching for it.
 use App\Models\NamaModel; Command to call the Model file that holds the database. Without this, the Controller cannot touch the data table.
 $data = NamaModel::all(); Magic command to fetch ALL data rows in the database table.
 return response()->json($data); Converts data into JSON format (preferred by React.js), then sends it to the browser.
-
+```
 2. Inside routes/web.php (URL Bridge)
-
+```
 Code Meaning
 use App\Http\Controllers\NamaController; Introduces NamaController to the Laravel routing system.
 Route::get('/model-name', [NamaController::class, 'index']); Creates a GET route. When someone opens /model-name, redirect to NamaController function index().
-
+```
+---
 3. Command to Create Dummy Data in Tinker
 
 ```php
@@ -218,8 +223,8 @@ export default App;
 
 ---
 
-🗺️ COMPLETE BACKEND → FRONTEND FLOW
-
+# 🗺️ COMPLETE BACKEND → FRONTEND FLOW
+```
 Flow 1: Manage Database (Database to Laravel)
 
 Step Command Description
@@ -255,7 +260,7 @@ Step Command Description
 2 Change 'paths' => ['api/*', 'sanctum/csrf-cookie'] To 'paths' => ['*']
 3 Ctrl + S Save changes
 4 Refresh browser Data appears immediately!
-
+```
 ---
 
 🎯 CORE FLOW (SIMPLEST)
@@ -267,7 +272,7 @@ Create Data → Serve via Laravel → Open CORS → Fetch and Display with React
 ---
 
 ✅ FINAL STATUS SUMMARY
-
+```
 Component Status
 Laravel Backend ✅ Complete
 Endpoint /model-name ✅ Ready
@@ -277,16 +282,16 @@ Axios ✅ Installed
 Frontend Server ✅ Running (npm run dev)
 API Integration ✅ COMPLETE! Data appears on screen
 Firefox Console ✅ Clean, no red errors
-
+```
 ---
 
 💡 IMPORTANT LESSONS
-
+```
 Lesson Description
 Vite Vite 6 doesn't support Node.js 18.19.1 → use Vite 5
 CORS Laravel only allows CORS for api/* routes by default
 CORS Solution Change 'paths' => ['api/*', 'sanctum/csrf-cookie'] to 'paths' => ['*']
 Asterisk (*) Means allow all routes, suitable for local development
 Axios Data fetcher from backend to frontend
-
+```
 ---
